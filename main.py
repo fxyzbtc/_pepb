@@ -6,6 +6,15 @@ from lib.mainUi import Ui_Sync
 import logging
 from lib.utils import logger
 
+import PySide2
+import os
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = os.path.dirname(PySide2.__file__) + '/plugins/platforms2'
+# dirname = os.path.dirname(sys.executable)
+
+# plugin_path = os.path.join(dirname, 'Library', 'plugins', 'platforms')
+# os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
+
+
 class LogEmittedConn(QtCore.QObject):
     signal = QtCore.Signal(str)
 
